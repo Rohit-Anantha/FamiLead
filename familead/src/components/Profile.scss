@@ -1,0 +1,28 @@
+@import '../global-styles.scss';
+
+.Profile {
+  margin: 0 2rem 0 2rem;
+  display: flex;
+  cursor: pointer;
+  //opacity: 100%;
+  color: #000000;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  align-self: center;
+  margin: 0 1rem 0 0;
+}
+.info {
+  align-self: center;
+}
+.name {
+  margin: 0;
+}
+.email {
+  margin: 0;
+  color: #000000;
+}

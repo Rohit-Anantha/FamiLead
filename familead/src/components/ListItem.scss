@@ -1,0 +1,13 @@
+@import '../global-styles.scss';
+
+.ListItem {
+  background: $text;
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
