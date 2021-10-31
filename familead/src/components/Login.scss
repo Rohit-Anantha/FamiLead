@@ -1,0 +1,35 @@
+@import '../global-styles.scss';
+.Login {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50vh;
+  background-color: $accent;
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+img {
+  height: 30%;
+}
+button {
+  background: $text;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  font-family: Montserrat;
+  color: white;
+  padding: 2rem;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
