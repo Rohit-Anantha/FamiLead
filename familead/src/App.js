@@ -61,10 +61,10 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
 
-  const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
+  const eventsRef = firestore.collection('events');
+  const query = eventsRef.orderBy('createdAt').limit(25);
 
-  const [messages] = useCollectionData(query, { idField: 'id' });
+  const [events] = useCollectionData(query, { idField: 'id' });
 
   const [formValue, setFormValue] = useState('');
 
@@ -73,7 +73,7 @@ function ChatRoom() {
 
     const { uid, photoURL } = auth.currentUser;
 
-    await messagesRef.add({
+    await eventsRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
@@ -88,7 +88,7 @@ function ChatRoom() {
     <>
       <main>
 
-        {messages && messages.map(msg => <ChatMessage key={msg.id} messages={msg} />)}
+        {events && events.map(msg => <ChatMessage key={msg.id} events={msg} />)}
         <div ref={dummy}>
         </div>
       </main>
@@ -102,9 +102,9 @@ function ChatRoom() {
 }
 
 function ChatMessage(props) {
-  const { text, uid, photoURL } = props.messages;
+  const { text, uid, photoURL } = props.events;
 
-  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+  const events = uid === auth.currentUser.uid ? 'sent' : 'received';
 
   return (
     <div className={'message $ {messageClass}'}>
